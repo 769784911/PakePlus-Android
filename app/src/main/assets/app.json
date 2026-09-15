@@ -1,9 +1,9 @@
 {
-    "name": "PakePlus",
+    "name": "云TV",
     "version": "1.0.0",
-    "description": "A sample mobile application by PakePlus",
-    "author": "1024coder",
-    "webUrl": "https://pphtml.pages.dev/app",
+    "description": "云TV App",
+    "author": "yun",
+    "webUrl": "https://yunqi99.com/moon",
     "debug": false,
     "userAgent": "",
     "fullScreen": false,
