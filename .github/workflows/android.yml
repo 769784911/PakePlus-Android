@@ -17,6 +17,14 @@ jobs:
           java-version: '17'
           cache: gradle
 
+      - name: Replace App Icon
+        run: |
+          for dpi in mdpi hdpi xhdpi xxhdpi xxxhdpi; do
+            mkdir -p app/src/main/res/mipmap-$dpi
+            cp app/src/main/res/mipmap-hdpi/app-icon.png app/src/main/res/mipmap-$dpi/ic_launcher.png
+            cp app/src/main/res/mipmap-hdpi/app-icon.png app/src/main/res/mipmap-$dpi/ic_launcher_round.png
+          done
+
       - name: Grant Execute Permission for Gradle
         run: chmod +x ./gradlew
 
