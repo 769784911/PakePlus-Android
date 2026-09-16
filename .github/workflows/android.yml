@@ -21,8 +21,8 @@ jobs:
         run: |
           for dpi in mdpi hdpi xhdpi xxhdpi xxxhdpi; do
             mkdir -p app/src/main/res/mipmap-$dpi
-            cp app/src/main/res/mipmap-hdpi/app-icon.png app/src/main/res/mipmap-$dpi/ic_launcher.png
-            cp app/src/main/res/mipmap-hdpi/app-icon.png app/src/main/res/mipmap-$dpi/ic_launcher_round.png
+            cp app/src/main/res/mipmap-hdpi/app_icon.png app/src/main/res/mipmap-$dpi/ic_launcher.png
+            cp app/src/main/res/mipmap-hdpi/app_icon.png app/src/main/res/mipmap-$dpi/ic_launcher_round.png
           done
 
       - name: Grant Execute Permission for Gradle
