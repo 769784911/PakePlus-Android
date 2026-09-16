@@ -7,14 +7,7 @@ android {
     namespace = "com.app.pakeplus"
     compileSdk = 34
 
-    signingConfigs {
-        create("release") {
-            storeFile = rootProject.file("pakeplus.keystore")
-            storePassword = "1024xiaoshen"
-            keyPassword = "1024xiaoshen"
-            keyAlias = "pakeplus"
-        }
-    }
+    // 👇 删掉了 signingConfigs 这一段，彻底不要密钥文件了
 
     defaultConfig {
         applicationId = "com.oaikes.pakeplus.android"
@@ -28,9 +21,9 @@ android {
     buildTypes {
         debug {
             isDebuggable = true
-            isMinifyEnabled = true
-            isShrinkResources = true
-            signingConfig = signingConfigs.getByName("release")
+            isMinifyEnabled = false // 调试包通常不混淆，方便排查问题
+            isShrinkResources = false
+            // 👇 删掉了 signingConfig = signingConfigs.getByName("release")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -38,7 +31,7 @@ android {
         }
         release {
             isMinifyEnabled = true
-            signingConfig = signingConfigs.getByName("release")
+            // 👇 删掉了 signingConfig = signingConfigs.getByName("release")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
